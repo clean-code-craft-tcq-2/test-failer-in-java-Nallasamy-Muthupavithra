@@ -20,7 +20,9 @@ public class Alerter {
     }
     public static void main(String[] args) {
         alertInCelcius(400.5f);
+        assertEquals("Failures count is not right", 1,alertFailureCount);
         alertInCelcius(303.6f);
+        assertEquals("Failures count is not right", 2,alertFailureCount);
         System.out.printf("%d alerts failed.\n", alertFailureCount);
         System.out.println("All is well (maybe!)\n");
     }
