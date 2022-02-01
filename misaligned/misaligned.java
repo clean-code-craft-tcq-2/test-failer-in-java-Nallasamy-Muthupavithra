@@ -23,7 +23,7 @@ class misaligned {
 
   public static void main(final String[] args) {
     assert (24 == formPairNumber(4, 4));
-    assert (formatColorPair(0, 0).equals("0\tWhite\tBlue"));
+    assert (formatColorPair(0, 0).equals("0\tWhite\tBlue\n"));
     
     printColorMap();
     System.out.println("All is well (maybe!)");
