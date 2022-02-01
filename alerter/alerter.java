@@ -46,7 +46,7 @@ public class Alerter {
     assert (resolveNetworkAlert("not ok", 98) == 500);
      assert (Float.compare(convertFarenheitToCelcius(100),(float) 37.77778)==0);
     incrementFailureCount(200);
-    assert (2 == alertFailureCount);
+    assert (1 == alertFailureCount);
     incrementFailureCount(500);
     assert (2 == alertFailureCount);
 
