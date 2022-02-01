@@ -1,5 +1,3 @@
-import static org.junit.Assert.assertEquals;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -37,8 +35,8 @@ class misaligned {
     assert (result == 25);
 
     Map<Integer, String[]> colorPairsMap = getColorPairs();
-    assertEquals("Major colour is equal", "White", colorPairsMap.get(3)[0]);
-    assertEquals("Minor colour is equal", "Green", colorPairsMap.get(3)[1]);
+    assert("Major colour is equal", "White"==colorPairsMap.get(3)[0]);
+    assert("Minor colour is equal", "Green"== colorPairsMap.get(3)[1]);
 
     System.out.println("All is well (maybe!)");
   }
