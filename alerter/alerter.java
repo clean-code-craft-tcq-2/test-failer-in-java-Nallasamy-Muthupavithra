@@ -44,7 +44,7 @@ public class Alerter {
     System.out.printf("%d alerts failed.\n", alertFailureCount);
     assert (resolveNetworkAlert("ok", 38) == 200);
     assert (resolveNetworkAlert("not ok", 98) == 500);
-    assert (convertFarenheitToCelcius(100) == 37.77778f);
+     assert (Float.compare(convertFarenheitToCelcius(100),(float) 37.77778)==0);
     incrementFailureCount(200);
     assert (2 == alertFailureCount);
     incrementFailureCount(500);
