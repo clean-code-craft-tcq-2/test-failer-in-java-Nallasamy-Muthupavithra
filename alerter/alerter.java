@@ -15,7 +15,7 @@ public class Alerter {
     }
     static void alertInCelcius(float farenheit, String networkTempStatus) {
         float celcius = (farenheit - 32) * 5 / 9;
-        int returnCode = networkTempStatus=="ok"?networkAlertStub(celcius):networkNotOkStub(float celcius);
+        int returnCode = networkTempStatus=="ok"?networkAlertStub(celcius):networkNotOkStub(celcius);
         if (returnCode != 200) {
             alertFailureCount += 1;
         }
