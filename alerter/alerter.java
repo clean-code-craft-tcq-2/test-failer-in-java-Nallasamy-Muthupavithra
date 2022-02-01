@@ -26,6 +26,7 @@ public class Alerter {
   }
 
   static float convertFarenheitToCelcius(final float farenheit) {
+     System.out.println("In celcius" + ((farenheit - 32) * 5) / 9 ) ;
     return ((farenheit - 32) * 5) / 9;
   }
 
