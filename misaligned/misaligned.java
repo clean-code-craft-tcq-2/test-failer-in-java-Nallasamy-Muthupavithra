@@ -35,8 +35,8 @@ class misaligned {
     assert (result == 25);
 
     Map<Integer, String[]> colorPairsMap = getColorPairs();
-    assert("Major colour is equal", "White"==colorPairsMap.get(3)[0]);
-    assert("Minor colour is equal", "Green"== colorPairsMap.get(3)[1]);
+    assert("White"==colorPairsMap.get(3)[0]);
+    assert("Green"== colorPairsMap.get(3)[1]);
 
     System.out.println("All is well (maybe!)");
   }
