@@ -25,7 +25,7 @@ class misaligned {
     for (i = 0; i < 5; i++) {
       for (j = 0; j < 5; j++) {
         colorPair[0] = majorColors[i];
-        colorPair[1] = minorColors[i];
+        colorPair[1] = minorColors[j];
         colorPairs.put((i * 5) + j, colorPair);
       }
     }
