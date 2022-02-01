@@ -14,18 +14,33 @@ public class Alerter {
         return 500;
     }
     static void alertInCelcius(float farenheit, String networkTempStatus) {
-        float celcius = (farenheit - 32) * 5 / 9;
-        int returnCode = networkTempStatus=="ok"?networkAlertStub(celcius):networkNotOkStub(celcius);
+        float celcius = convertFarenheitToCelcius(farenheit);
+        int returnCode =resolveNetworkAlert(networkTempStatus);
+        incrementFailureCount(returnCode);
+    }
+    static int resolveNetworkAlert(String networkTempStatus){
+        return networkTempStatus=="ok" ? networkAlertStub(celcius) : networkNotOkStub(celcius);
+      }
+    static float convertFarenheitToCelcius(float farenheit){
+       return  (farenheit - 32) * 5 / 9;
+    }
+    static void incrementFailureCount(String returnCode){
         if (returnCode != 200) {
             alertFailureCount += 1;
         }
     }
     public static void main(String[] args) {
         alertInCelcius(400.5f,"ok");
-        assertEquals("Failures count is not right", 0,alertFailureCount);
+        assert( 0==alertFailureCount);
         alertInCelcius(303.6f,"not ok");
-        assertEquals("Failures count is not right", 1,alertFailureCount);
+        assert(1==alertFailureCount);
         System.out.printf("%d alerts failed.\n", alertFailureCount);
+        assert(resolveNetworkAlert("ok")==200);
+        assert(resolveNetworkAlert("not ok")==500);
+        assert(convertFarenheitToCelcius(100)==37.78);
+        assert(incrementFailureCount(200)==2);
+        assert(incrementFailureCount(500)==2);
+        
         System.out.println("All is well (maybe!)\n");
     }
 }
